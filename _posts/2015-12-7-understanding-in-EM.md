@@ -6,9 +6,12 @@ tagline: "Machine Learning"
 tags : [EM, ML]
 excerpt: 本文主要来自李航老师的《统计学习方法》和网络的参考资料总结而成的自身对EM算法的理解。
 ---
+{% include JB/setup %}
+
 #EM算法的整体思路和理解
 
 本文主要来自李航老师的《统计学习方法》和网络的参考资料总结而成的自身对EM算法的理解。
+
 ##常见使用场景
 
 EM算法是一种**迭代**算法，主要针对机器学习模型中，包含不可见的隐变量Z的模型的参数求解。
@@ -59,6 +62,7 @@ $$= \sum \limits_{i=1}^nlog (\sum \limits_Z P(Y|Z,\theta)P(Z|\theta))$$
 隐变量Z是关于y和$\theta$ 的条件概率,$D_i(Z)$的计算公式就是后验概率。
            
            
+
 ##EM算法的导出
 
 **验证EM的正确性，取下界是正确的:**
@@ -83,17 +87,14 @@ $$= \sum \limits_{i=1}^nlog (\sum \limits_Z P(Y|Z,\theta)P(Z|\theta))$$
     所有只有前面这部分$arg \max \limits_\theta \sum \limits_{i=1}^n \sum \limits_z p(z|x, \theta_t) log P(x,z|\theta) $
     
 
-
-           
-
-
-
+         
 
 ##EM问题
 
 似然函数对于离散情况是log概率，连续时是log的概率密度，极大似然是说出现data的概率最大，对于连续的情况怎么联系 概率密度最大 就等价概率最大
 
 ##Reference Links
+
 [http://www.cnblogs.com/jerrylead/archive/2011/04/06/2006936.html](http://www.cnblogs.com/jerrylead/archive/2011/04/06/2006936.html)
 
 [http://blog.csdn.net/abcjennifer/article/details/8170378](http://blog.csdn.net/abcjennifer/article/details/8170378)
