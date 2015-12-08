@@ -1,8 +1,12 @@
 $(document).ready(function() {
+    $(window).load(function(){
+      $(".waitload").css("display","none");
+      $("body").css("overflow","auto");
+    });
+    var $doc = $(document);
     var $navbar = $(".navbar");
     var $welcome = $("#welcome");
     var $curpage = $("#current-page");
-    var $doc = $(document);
     var $top = $(".top");
     if($curpage.val() == 1){
         $welcome.css("display","block");
@@ -44,6 +48,12 @@ $(document).ready(function() {
             }
         });
     }
+    /*绑定welcome页面的page down事件*/
+    var $down = $welcome.find(".down");
+    $down.on('click',function(){
+        $doc.scrollTop($welcome.height());
+    })
+    /*绑定up to top事件*/
     $top.on('click',function(){
         var scroll = $doc.scrollTop();
         var dis = Math.floor(scroll / 4);
