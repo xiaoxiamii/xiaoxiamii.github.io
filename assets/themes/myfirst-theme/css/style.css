@@ -10,7 +10,7 @@ body{
   overflow: auto;
 }
 /*loading*/
-.waitload{
+/*.waitload{
   width: 100%;
   height: 100%;
   text-align: center;
@@ -107,7 +107,7 @@ body{
     -ms-transform: scaleY(0.3);
   }
 }
-
+*/
 /* Custom navbar */
 div.navbar-fixed{
   position: fixed;

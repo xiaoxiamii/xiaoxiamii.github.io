@@ -1,8 +1,8 @@
 $(document).ready(function() {
-    $(window).load(function(){
-      $(".waitload").css("display","none");
-      $("body").css("overflow","auto");
-    });
+    // $(window).load(function(){
+    //   $(".waitload").css("display","none");
+    //   $("body").css("overflow","auto");
+    // });
     var $doc = $(document);
     var $navbar = $(".navbar");
     var $welcome = $("#welcome");

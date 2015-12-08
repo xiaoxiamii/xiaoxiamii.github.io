@@ -6,10 +6,10 @@
 // 	$likeimg.css("background-position","0 -130px");
 // });
 
-$(document).ready(function() {
-    $(window).load(function(){
-      $(".waitload").css("display","none");
-      $(".navbar").addClass("navbar-fixed");
-      $("body").css("overflow","auto");
-    });
-});
+// $(document).ready(function() {
+//     $(window).load(function(){
+//       $(".waitload").css("display","none");
+//       $(".navbar").addClass("navbar-fixed");
+//       $("body").css("overflow","auto");
+//     });
+// });
