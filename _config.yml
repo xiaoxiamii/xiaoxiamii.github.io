@@ -9,16 +9,16 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : zsyjx0115
+title : xiaoxiamii
 tagline: Site Tagline
 author :
-  name : Qiannan Jia
-  email : zsyjx0115@163.com
-  github : zsyjx0115
+  name : zzz
+  email : zzz
+  github : xiaoxiamii
   twitter : username
   feedburner : feedname
 gems: [jekyll-paginate]
-paginate: 4
+paginate: 3
 paginate_path: "page:num"
 
 # The production_url is only used when full-domain names are needed
@@ -97,7 +97,7 @@ JB :
       width: 580
       colorscheme: light
     duoshuo :
-      short_name : zsyjx0115
+      short_name : xiaoxiamii
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
