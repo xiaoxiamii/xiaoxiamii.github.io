@@ -23,7 +23,11 @@ $\mu_1 , \sigma_1 , \mu_2, \sigma_2$ 就是我们要求的模型参数
 (3)、M步：求使$Q(\theta, \theta^\left( i\right))$极大化的$\theta$,确定第i+1次迭代的参数的估计值$\theta ^\left( i+1\right)$
 $$\theta^\left(i+1\right) = arg \max\limits_\theta \ Q(\theta, \theta^\left( i\right))$$
 
-**Q函数：** $$Q(\theta, \theta^\left( i\right)) = E_Z [ln\ P(Y,Z|\theta)| Y, \theta^\left(i\right)]$$
+**Q函数：** 
+
+$$
+Q(\theta, \theta^\left( i\right)) = E_Z [ln\ P(Y,Z|\theta)| Y, \theta^\left(i\right)]
+$$
 
 这里，对整个EM的算法框架介绍完毕。
 
