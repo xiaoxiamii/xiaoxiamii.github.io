@@ -1,7 +1,7 @@
 ---
 layout: post
-category : lessons
-tagline: "Machine Learning"
+category : Machine Learning
+tagline: ""
 tags : [EM, ML]
 excerpt: 本文主要来自李航老师的《统计学习方法》和网络的参考资料总结而成的自身对EM算法的理解。
 ---
