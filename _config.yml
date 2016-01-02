@@ -20,6 +20,7 @@ author :
 gems: [jekyll-paginate]
 paginate: 3
 paginate_path: "page:num"
+markdown: kramdown
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
