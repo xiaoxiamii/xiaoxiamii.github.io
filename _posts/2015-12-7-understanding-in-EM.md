@@ -39,6 +39,7 @@ $$\ =\sum_{Z} logP\left( Y,Z\ \mid \  \theta  \right) P \left( Z\ \mid \ Y, \the
 $$\theta^\left(i+1\right) = arg \max\limits_\theta \ Q(\theta, \theta^\left( i\right))$$
 
 **Q函数：** 
+
 $$Q(\theta, \theta^\left( i\right)) = E_Z [ln\ P(Y,Z \mid \theta) \mid  Y, \theta^\left(i\right)]$$
 
 这里，对整个EM的算法框架介绍完毕。
@@ -57,7 +58,7 @@ $$= \sum \limits_{i=1}^nlog (\sum \limits_Z P(Y \mid Z,\theta)P(Z \mid \theta))$
            $$= \sum \limits_{i=1}^n log\sum \limits_Z D_i(z_i) \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
 
            $$\geq \sum \limits_{i=1}^n \sum \limits_Z D_i(z_i) log \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
-           
+
            这里，我们对$L(\theta)$取下界，利用Jensen不等式，等号成立条件：
            $$\frac {P(y_i,z_i  \mid \theta)} {D_i(z_i)} = c$$
            即 $D_i \propto P(y_i, z_i  \mid \theta)$ 且  $\sum \limits_{z} D_i(z_i) =1$
