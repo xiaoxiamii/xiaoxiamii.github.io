@@ -117,7 +117,7 @@ $$= arg \max \limits_\theta \sum \limits_{i=1}^n \sum \limits_z p(z \mid x, \the
 
 $$=arg \max \limits_\theta \sum \limits_{i=1}^n \sum \limits_z p(z \mid x, \theta_t) log P(x,z \mid \theta) - p(z \mid x, \theta_t) {P(z \mid x,\theta_t)}$$
 
-因为$p(z \mid x, \theta_t) {P(z \mid x,\theta_t)}$中的$\theta_t$都是定值，所以在对\theta求导的时候，会消掉，
+因为$p(z \mid x, \theta_t) {P(z \mid x,\theta_t)}$中的$\theta_t$都是定值，所以在对$\theta$求导的时候，会消掉，
 所有只有前面这部分$arg \max \limits_\theta \sum \limits_{i=1}^n \sum \limits_z p(z \mid x, \theta_t) log P(x,z \mid \theta) $
 
 
