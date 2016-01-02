@@ -29,27 +29,35 @@ $\mu_1 , \sigma_1 , \mu_2, \sigma_2$ 就是我们要求的模型参数
 **输入：**	观测变量数据**Y**， 隐藏变量数据**Z**, 联合分布$ P \left( Y,Z \mid \theta \right)$,	条件分布$P \left( Z \mid Y, \theta \right)$；
 **输出：**	模型参数$\theta$
 (1)、选择参数的初值$\theta^\left ( 0 \right )$ ， 这里参数随机选择，开始迭代
-(2)、E步： 记 $\theta^\left( i \right)$为第i次迭代参数$\theta$的估计值， 在第 i+1 次迭代的E步，计算$$Q\left( \theta , \theta^\left( i \right) \right) = E_Z [logP(Y,Z \mid \theta)  \mid  Y,\theta^\left( i \right)] $$$$\ =\sum_{Z} logP\left( Y,Z\ \mid \  \theta  \right) P \left( Z\ \mid \ Y, \theta^\left(i \right)\right)$$
+(2)、E步： 记 $\theta^\left( i \right)$为第i次迭代参数$\theta$的估计值， 在第 i+1 次迭代的E步，计算
+$$Q\left( \theta , \theta^\left( i \right) \right) = E_Z [logP(Y,Z \mid \theta)  \mid  Y,\theta^\left( i \right)] $$
+$$\ =\sum_{Z} logP\left( Y,Z\ \mid \  \theta  \right) P \left( Z\ \mid \ Y, \theta^\left(i \right)\right)$$
 
 这里， $P(Z \mid Y, \theta^ \left( i\right))$ 是在给定观测数据Y和当前的参数估计$\theta^\left( i \right)$下隐变量数据Z的条件概率分布
 
 (3)、M步：求使$Q(\theta, \theta^\left( i\right))$极大化的$\theta$,确定第i+1次迭代的参数的估计值$\theta ^\left( i+1\right)$
 $$\theta^\left(i+1\right) = arg \max\limits_\theta \ Q(\theta, \theta^\left( i\right))$$
 
-**Q函数：** $$Q(\theta, \theta^\left( i\right)) = E_Z [ln\ P(Y,Z \mid \theta) \mid  Y, \theta^\left(i\right)]$$
+**Q函数：** 
+$$Q(\theta, \theta^\left( i\right)) = E_Z [ln\ P(Y,Z \mid \theta) \mid  Y, \theta^\left(i\right)]$$
 
 这里，对整个EM的算法框架介绍完毕。
 
 ##隐变量Z的推导
 
 **问题:** 为什么隐变量Z是关于观测数据Y和$\theta$的条件概率分布$P \left( Z \mid Y, \theta \right)$
-**推导:** 观测数据Y关于参数$\theta$的对数似然函数：$$L(\theta) = log\ P(Y \mid \theta) = \sum \limits_{i=1}^nlog \sum \limits_Z P(y, z \mid \theta)$$ 
+**推导:** 观测数据Y关于参数$\theta$的对数似然函数：
+$$L(\theta) = log\ P(Y \mid \theta) = \sum \limits_{i=1}^nlog \sum \limits_Z P(y, z \mid \theta)$$ 
 $$= \sum \limits_{i=1}^nlog (\sum \limits_Z P(Y \mid Z,\theta)P(Z \mid \theta))$$
 
 **假设:** 假设D是隐变量Z的某一个分布，且D>=0,则有：
+
            $$= \sum \limits_{i=1}^n log (\sum \limits_Z P(Y \mid Z,\theta)P(Z \mid \theta))$$ 
+
            $$= \sum \limits_{i=1}^n log\sum \limits_Z D_i(z_i) \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
+
            $$\geq \sum \limits_{i=1}^n \sum \limits_Z D_i(z_i) log \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
+           
            这里，我们对$L(\theta)$取下界，利用Jensen不等式，等号成立条件：
            $$\frac {P(y_i,z_i  \mid \theta)} {D_i(z_i)} = c$$
            即 $D_i \propto P(y_i, z_i  \mid \theta)$ 且  $\sum \limits_{z} D_i(z_i) =1$
