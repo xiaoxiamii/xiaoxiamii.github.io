@@ -53,19 +53,18 @@ $$= \sum \limits_{i=1}^nlog (\sum \limits_Z P(Y \mid Z,\theta)P(Z \mid \theta))$
 
 **假设:** 假设D是隐变量Z的某一个分布，且D>=0,则有：
 
-           $$= \sum \limits_{i=1}^n log (\sum \limits_Z P(Y \mid Z,\theta)P(Z \mid \theta))$$ 
+$$= \sum \limits_{i=1}^n log (\sum \limits_Z P(Y \mid Z,\theta)P(Z \mid \theta))$$ 
+$$= \sum \limits_{i=1}^n log\sum \limits_Z D_i(z_i) \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
 
-           $$= \sum \limits_{i=1}^n log\sum \limits_Z D_i(z_i) \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
+$$\geq \sum \limits_{i=1}^n \sum \limits_Z D_i(z_i) log \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
 
-           $$\geq \sum \limits_{i=1}^n \sum \limits_Z D_i(z_i) log \frac{P(y_i, z_i  \mid  \theta)}{D_i(z_i)}$$
-
-           这里，我们对$L(\theta)$取下界，利用Jensen不等式，等号成立条件：
-           $$\frac {P(y_i,z_i  \mid \theta)} {D_i(z_i)} = c$$
-           即 $D_i \propto P(y_i, z_i  \mid \theta)$ 且  $\sum \limits_{z} D_i(z_i) =1$
-           **推导出**
-           $$D_i(Z_i) =  \frac {P(y_i, z_i \mid \theta)} {P(y_i,z \mid \theta)}$$
-           $$ =\frac {P(y_i, z_i  \mid  \theta)} {P(y_i  \mid  \theta)}$$
-           $$ = P(z_i \mid y_i, \theta)$$
+这里，我们对$L(\theta)$取下界，利用Jensen不等式，等号成立条件：
+$$\frac {P(y_i,z_i  \mid \theta)} {D_i(z_i)} = c$$
+即 $D_i \propto P(y_i, z_i  \mid \theta)$ 且  $\sum \limits_{z} D_i(z_i) =1$
+**推导出**
+$$D_i(Z_i) =  \frac {P(y_i, z_i \mid \theta)} {P(y_i,z \mid \theta)}$$
+$$ =\frac {P(y_i, z_i  \mid  \theta)} {P(y_i  \mid  \theta)}$$
+$$ = P(z_i \mid y_i, \theta)$$
 **得到结论**
 隐变量Z是关于y和$\theta$ 的条件概率,$D_i(Z)$的计算公式就是后验概率。
            
